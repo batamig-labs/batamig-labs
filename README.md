@@ -1,16 +1,22 @@
-## Hi there 👋
+# Batami Gold
 
-<!--
-**batamig-labs/batamig-labs** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🔭 This is my personal account and repo: tools I build for my own workflows, practice, 
+and learning, and pro bono projects I contribute to. My day-job GitHub work from 
+the past 6 years — 28,000+ contributions and 2,000+ merged PRs across Microsoft 
+security and Azure docs — happened under a Microsoft-gated work account, so there
+isn't much of a public trail. What's public starts here.
 
-Here are some ideas to get you started:
+👯 I'm a technical content leader: 20+ years in enterprise and SaaS, the last seven in
+security — Microsoft (Defender, Azure) and AlgoSec before that. Most recently I
+led a team of five writers as a Knowledge Engineering Manager, driving our
+shift to AI-native content — agents that draft from code, and sources of truth
+built for humans and LLMs alike.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+💬 The craft underneath all of it is extraction: pulling what matters out of
+engineers, PMs, and systems that aren't quite talking to each other, and
+shaping it into content a tired reader struggling to redeploy or troubleshoot 
+can actually use. Docs-as-code is home — Markdown, Git, PRs, reviews.
+
+🤔 I'm looking for my next role in technical content leadership, knowledge
+engineering, or customer enablement. If that sounds like a match,
+[LinkedIn](https://linkedin.com/in/batamig) is the fastest way to reach me.
