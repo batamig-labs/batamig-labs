@@ -3,10 +3,12 @@
 🔭 This is my personal account and repo: tools I build for my own workflows, practice, 
 and learning, and pro bono projects I contribute to. My day-job GitHub work from 
 the past 6 years — 28,000+ contributions and 2,000+ merged PRs across Microsoft 
-security and Azure docs — happened under a Microsoft-gated work account, so there
-isn't much of a public trail. What's public starts here.
+security and Azure docs — happened at [batamig](https://github.com/batamig), and my 
+contributions drifted off in 2026, when I moved into people management. I'm not quite 
+sure what will happen to that record when I'm no longer at Microsoft, which is why 
+I've set this up here.
 
-👯 I'm a technical content leader: 20+ years in enterprise and SaaS, the last seven in
+👯 **About me**: I'm a technical content leader: 20+ years in enterprise and SaaS, the last seven in
 security — Microsoft (Defender, Azure) and AlgoSec before that. Most recently I
 led a team of five writers as a Knowledge Engineering Manager, driving our
 shift to AI-native content — agents that draft from code, and sources of truth
