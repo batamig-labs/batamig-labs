@@ -4,9 +4,9 @@
 workflows, practice, and learning, and pro bono projects I contribute to. My day-job 
 GitHub work from the past 6 years — 28,000+ contributions and 2,000+ merged PRs across 
 Microsoft security and Azure docs — happened at [batamig](https://github.com/batamig), 
-and my contributions drifted off in 2026, when I moved into people management. I'm not 
-quite sure what will happen to that record when I'm no longer at Microsoft, which is why 
-I've set this up here.
+and my contributions drifted off in 2026, when I moved into people management. I was impacted
+by the July 2026 layoffs, and I'm not sure what will happen to that record when I'm no 
+longer at Microsoft, which is why I've set this up here.
 
 👯 **About me**: I'm a technical content leader: 20+ years in enterprise and SaaS, the 
 last seven in security — Microsoft (Defender, Azure) and AlgoSec before that. Most recently
