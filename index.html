@@ -153,10 +153,24 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
 .tools b { font-weight: 500; color: var(--ink); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.75rem; margin-right: 0.75rem; }
 
 /* Stories */
+.carousel-head { max-width: none; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; }
+.carousel-nav { display: flex; align-items: center; gap: 0.5rem; }
+.ccount { font: 500 0.78rem/1 var(--font-mono); color: var(--muted); margin-right: 0.5rem; letter-spacing: 0.05em; }
+.cbtn {
+  width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1.5px solid var(--accent);
+  background: transparent; color: var(--accent); display: grid; place-content: center; cursor: pointer; padding: 0;
+}
+.cbtn:hover:not(:disabled) { background: var(--accent); color: var(--on-accent); }
+.cbtn:disabled { opacity: 0.35; cursor: default; }
+.cbtn:focus-visible, .track:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.track {
+  display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain; padding-bottom: 1rem; scrollbar-width: thin; scrollbar-color: var(--rule) transparent;
+}
 .story {
-  display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
-  gap: 1rem clamp(1.5rem, 5vw, 4rem);
-  padding-block: 2rem; border-top: 1px solid var(--rule);
+  flex: 0 0 min(88%, 31rem); scroll-snap-align: start; min-width: 0;
+  display: flex; flex-direction: column; gap: 1.25rem;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem;
 }
 .story h3 { font: 500 1.5rem/1.2 var(--font-display); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
 .story .label { color: var(--accent); }
@@ -183,8 +197,10 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
 
 /* Community */
 
-.comm { column-width: 20rem; column-gap: 1.25rem; }
-.ccard { margin: 0 0 1.25rem; break-inside: avoid; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+.comm { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; }
+.ccol { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.ccol .ccard:last-child { flex: 1; }
+.ccard { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
 .ccard p { margin: 0; }
 .ccard a { color: var(--accent); text-underline-offset: 3px; }
 .ccard .label { margin: 0.25rem 0 0; color: var(--accent); }
@@ -205,7 +221,6 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
 @media (max-width: 760px) {
   .hero { grid-template-columns: minmax(0, 1fr); }
   .portrait { max-width: 16rem; order: -1; }
-  .story { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
 </head>
@@ -219,7 +234,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
         <li><a href="#together">Working together</a></li>
         <li><a href="#work">Selected work</a></li>
         <li><a href="#words">Kind words</a></li>
-        <li><a href="#community">Community</a></li>
+        <li><a href="#community">Speaking</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
@@ -231,7 +246,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
         <p class="label">Technical content leader · AI-native documentation · Clarity &amp; customer experience</p>
         <h1 id="h-hero">Complicated services made clear and <span class="hl">usable</span>.</h1>
         <p class="lede">I’m Batami Gold. I’ve got two decades of experience writing and managing documentation, with the last six at Microsoft and seven in security.</p>
-        <p class="lede">These days I focus on the knowledge behind the docs. I want what is true, current, and trusted to be the source that readers and AI answers both draw on.</p>
+        <p class="lede">These days, I focus on the knowledge behind the docs, drafting the hard parts myself. I build processes around that knowledge: who reviews, who’s informed, and how we know it reaches people. I want what’s true, current, and trusted to be the source that both readers and AI tools draw on.</p>
         <p class="opento">I’m open to both full-time roles and project work, in documentation leadership and technical content, in Israel or remote in EMEA.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://calendly.com/batamig" target="_blank" rel="noopener">Book a conversation</a>
@@ -250,7 +265,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
       <ul class="do">
         <li>
           <h3>Writing what’s hard to write</h3>
-          <p>Incident-response guidance, migration journeys, onboarding guides, and references. I work docs-as-code, in Markdown and Git, or using any tools you prefer. In my years at Microsoft, I wrote more than 2,000 merged pull requests on Microsoft Learn, spanning both quick fixes and extensive, cross-service content overhauls.</p>
+          <p>Incident-response guidance, migration journeys, onboarding guides, and references. I work docs-as-code, in Markdown and Git, or in any tools you prefer. My work spans both quick fixes and extensive, cross-service content overhauls.</p>
         </li>
         <li>
           <h3>Governing the knowledge layer</h3>
@@ -258,11 +273,19 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
         </li>
         <li>
           <h3>AI-assisted content work</h3>
-          <p>I set direction for documentation agents, for tests of how well docs serve AI answers, and for ticket-driven doc fixes.</p>
+          <p>I set direction for documentation agents, for tests of how well docs serve AI answers, and for ticket-driven doc fixes. I champion AI-native practice and use AI daily to draft, review, measure, and report on content.</p>
+        </li>
+        <li>
+          <h3>Keeping people aligned through change</h3>
+          <p>Migrations, acquisitions, deprecations, and incidents all need one clear account of what’s happening, what it means, and what to do next. I write it, get it through legal and product review, and keep stakeholders informed along the way.</p>
+        </li>
+        <li>
+          <h3>Running content projects end to end</h3>
+          <p>Planning and tracking content work so it lands with the release. I’ve run documentation backlogs in Azure DevOps and Jira, set priorities with product and engineering, and managed subcontractors through full content migrations and complicated projects.</p>
         </li>
         <li>
           <h3>Leading content teams</h3>
-          <p>I coach and grow writers. My last role was leading a team of writers across Microsoft Defender services. Throughout my entire career, I’ve mentored junior writers and other people entering or pivoting into tech.</p>
+          <p>I coach and grow writers. My last role was leading a team of writers across Microsoft Defender services. Throughout my career, I’ve mentored junior writers and other people entering or pivoting into tech.</p>
         </li>
       </ul>
       <p class="tools"><b>Toolbox</b>Claude and Claude Code · ChatGPT · Microsoft Office suite, including Copilot · Markdown · Git, GitHub, and GitHub Copilot · Docs-as-code</p>
@@ -292,32 +315,29 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
     </section>
 
     <section class="sec" id="work" aria-labelledby="h-work">
-      <div class="sec-head">
-        <p class="label">Selected work</p>
-        <h2 id="h-work">Projects I owned</h2>
+      <div class="sec-head carousel-head">
+        <div>
+          <p class="label">Selected work</p>
+          <h2 id="h-work">Projects I’ve owned</h2>
+        </div>
+        <div class="carousel-nav">
+          <span class="ccount" id="work-count" aria-live="polite"></span>
+          <button class="cbtn" type="button" id="work-prev" aria-controls="work-track" aria-label="Previous project"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="cbtn" type="button" id="work-next" aria-controls="work-track" aria-label="Next project"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
       </div>
 
+      <div class="track" id="work-track" tabindex="0" role="region" aria-label="Project stories, scroll sideways for more">
       <article class="story">
         <div>
           <p class="label">Migration</p>
           <h3>One path for two merging products</h3>
         </div>
         <dl>
-          <div><dt>Situation</dt><dd>As Microsoft Sentinel moved into the Microsoft Defender portal, the guidance customers needed was all gated, scattered, and confusing. There wasn’t a single, trusted walkthrough, which would leave many support tickets and users stuck mid-migration.</dd></div>
+          <div><dt>Situation</dt><dd>As Microsoft Sentinel moved into the Microsoft Defender portal, the migration guidance customers needed was gated, scattered, and confusing. Without one trusted walkthrough, users would get stuck mid-migration.</dd></div>
+          <div><dt>Audiences</dt><dd>Customers needed one path to follow. Support and customer experience teams needed one trusted link to send them.</dd></div>
           <div><dt>What I did</dt><dd>I consolidated information from many stakeholder teams into one article that customers could follow and took it public with the product preview.</dd></div>
           <div><dt>Outcome</dt><dd>The customer experience team lead cited it as the most requested content from their customers during the initial migration period.</dd></div>
-        </dl>
-      </article>
-
-      <article class="story">
-        <div>
-          <p class="label">Incident response</p>
-          <h3>Customer guidance after a major supply-chain attack</h3>
-        </div>
-        <dl>
-          <div><dt>Situation</dt><dd>After a widely publicized nation-state attack, customers needed clear steps to understand their exposure and mitigate it. With uncertainty high, Microsoft Learn wanted a set of consistent remediation and containment steps to recommend.</dd></div>
-          <div><dt>What I did</dt><dd>I was asked to write the article and owned it through months of review by legal, product, and threat-intelligence teams. It had to pull guidance from across Microsoft Security services into one piece that covered both prevention and recovery. I worked with security researchers and legal reviewers who rarely deal with documentation. The topic was sensitive, and every statement had to hold up.</dd></div>
-          <div><dt>Outcome</dt><dd>Published guidance that customers around the world used to respond.</dd></div>
         </dl>
       </article>
 
@@ -327,24 +347,53 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
           <h3>Documentation through an acquisition</h3>
         </div>
         <dl>
-          <div><dt>Situation</dt><dd>A newly acquired Operational Technology security product had to fit into its new parent company’s platform and documentation standards, with a unique set of customer audiences and needs. Documentation was fragmented across systems, preventing customer understanding and blocking onboarding. </dd></div>
-          <div><dt>What I did</dt><dd>As the sole documentation owner, I restructured the enterprise product docs, created an online catalog for supported hardware devices, rebuilt API and CLI references, and created self-service deployment procedures for user personas who were accustomed to more handholding. In this role, I also served as a design partner on the Microsoft Learn PDF refresh effort, arguing for the offline PDFs our users relied on.</dd></div>
-          <div><dt>Outcome</dt><dd>A fully integrated set of content that both met unique customer needs and clicked into the enterprise standards and processes.</dd></div>
+          <div><dt>Situation</dt><dd>A newly acquired operational technology (OT) security product had to fit its new parent’s platform and documentation standards. Its docs were fragmented across systems, blocking customer trust and onboarding.</dd></div>
+          <div><dt>Audiences</dt><dd>OT teams used to vendor handholding needed self-service deployment steps. Enterprise security teams needed docs that matched the rest of the platform.</dd></div>
+          <div><dt>What I did</dt><dd>I restructured the onboarding and usage docs, built a catalog of supported hardware appliances, rebuilt the API and CLI references, and wrote an end-to-end, self-service deployment process. I also championed PDF quality and design for a Microsoft Learn PDF refresh.</dd></div>
+          <div><dt>Outcome</dt><dd>A fully integrated content set that met its customers’ unique needs and fit the enterprise standards.</dd></div>
+        </dl>
+      </article>
+
+      <article class="story">
+        <div>
+          <p class="label">Org change</p>
+          <h3>Guiding a writing org into knowledge engineering</h3>
+        </div>
+        <dl>
+          <div><dt>Situation</dt><dd>A 50-person documentation org was shifting from traditional technical writing to AI knowledge engineering, and no formal function existed yet to lead the change.</dd></div>
+          <div><dt>Audiences</dt><dd>Writers and leads needed to know what was changing in their work and where to find guidance. Leadership needed the change to keep moving.</dd></div>
+          <div><dt>What I did</dt><dd>I led the internal virtual team that carried the change in the meantime, authored its charter, and landed our guidance in the org wiki ahead of an all-hands.</dd></div>
+          <div><dt>Outcome</dt><dd>The guidance was in place and findable before the all-hands, and the virtual team kept the change moving until a formal transformation group was created.</dd></div>
+        </dl>
+      </article>
+
+      <article class="story">
+        <div>
+          <p class="label">Internal communications</p>
+          <h3>A newsletter program with four series</h3>
+        </div>
+        <dl>
+          <div><dt>Situation</dt><dd>The org needed a regular channel for news and guidance, and there was no way to tell whether anyone read what was sent.</dd></div>
+          <div><dt>Audiences</dt><dd>Stakeholders needed a consistent set and style of updates. I needed to know which of those updates reached them.</dd></div>
+          <div><dt>What I did</dt><dd>Over the course of two years, I ran the newsletters across 30 editions and four series, and introduced view tracking where none existed.</dd></div>
+          <div><dt>Outcome</dt><dd>Metrics I was able to take to both content and stakeholder leadership: about 7,600 views across 30 editions.</dd></div>
         </dl>
       </article>
 
       <article class="story">
         <div>
           <p class="label">Documentation revamp</p>
-          <h3>AlgoSec: from PDFs to an online help system</h3>
+          <h3>From PDFs to an online help system</h3>
         </div>
         <dl>
-          <div><dt>Situation</dt><dd>AlgoSec’s documentation was managed in a legacy system and delivered to customers as PDFs. The company was growing, and it was still working out what dedicated technical writing could contribute and whether its docs should be public. Content was hard to search and update, causing customers to open support cases for answers that should have been self‑service.</dd></div>
-          <div><dt>What I did</dt><dd>As the sole full-time writer, I owned the docs end-to-end and managed subcontractors for the migration and lower-priority work. I moved the content into MadCap Flare and published an online help system with product and version selectors, and made the case for publishing the docs publicly. I kept the internal knowledge base current, tied the docs’ branding and language to the marketing materials so customers recognized what they had bought, and set up Jira-based content tracking and Google Analytics reporting.</dd></div>
-          <div><dt>Outcome</dt><dd>Support efforts were smoother, and by the time I left, technical content had a recognized place in the company, with a brand and direction of its own for my successors. The online help’s main structure, selectors included, is still recognizable years later.</dd></div>
+          <div><dt>Situation</dt><dd>AlgoSec delivered its docs as PDFs from a legacy system. Content was hard to search and update, and customers struggled to find answers that should have been self‑service.</dd></div>
+          <div><dt>Audiences</dt><dd>Customers needed easy answers. Support needed docs to link to. Leadership needed to see what dedicated technical writing could add.</dd></div>
+          <div><dt>What I did</dt><dd>I migrated the docs to an online help system, complete with advanced product and version selectors. I also set up content tracking and analytics, and reported on the metrics to leadership and stakeholders.</dd></div>
+          <div><dt>Outcome</dt><dd>Technical content earned a recognized place in the company, and the help system’s structure is still recognizable years later.</dd></div>
         </dl>
       </article>
-</section>
+      </div>
+    </section>
 
     <section class="sec" id="words" aria-labelledby="h-words">
       <div class="sec-head">
@@ -358,10 +407,10 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
         <figcaption>Doug Eby<span>, Principal Content Leader, Microsoft Security</span> <a class="src" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption>
       </figure>
       <div class="quotes">
-        <figure class="qcard"><blockquote><p>Batami is one of those rare individuals who possesses incredible cognitive speed AND showcases patience and empathy.</p></blockquote><figcaption><span class="who">Austin McCollum<span>Teammate, Microsoft</span></span> <a class="src more" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption></figure>
         <figure class="qcard"><blockquote><p>That combination of technical context, coordination, and follow-through has been valuable in the work we’ve shared.</p></blockquote><figcaption><span class="who">Dina Berry<span>Senior Knowledge Engineer, Microsoft</span></span> <a class="src more" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption></figure>
-        <figure class="qcard"><blockquote><p>She is a talented technical writer and editor, exhibits integrity and character in all of her interactions, and is extremely smart.</p></blockquote><figcaption><span class="who">Jon Burchel<span>Managing Partner, Labyrinth Park LLC; former Microsoft colleague</span></span> <a class="src more" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption></figure>
         <figure class="qcard"><blockquote><p>Your leadership and determination to build the consistency needed to support this work have made a meaningful impact.</p></blockquote><figcaption><span class="who">Lesley Bacon<span>Senior Program Manager, former Microsoft stakeholder</span></span></figcaption></figure>
+        <figure class="qcard"><blockquote><p>Batami is one of those rare individuals who possesses incredible cognitive speed AND showcases patience and empathy.</p></blockquote><figcaption><span class="who">Austin McCollum<span>Teammate, Microsoft</span></span> <a class="src more" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption></figure>
+        <figure class="qcard"><blockquote><p>She is a talented technical writer and editor, exhibits integrity and character in all of her interactions, and is extremely smart.</p></blockquote><figcaption><span class="who">Jon Burchel<span>Managing Partner, Labyrinth Park LLC; former Microsoft colleague</span></span> <a class="src more" href="https://www.linkedin.com/in/batamig/details/recommendations/" target="_blank" rel="noopener">Read on LinkedIn</a></figcaption></figure>
         <figure class="qcard"><blockquote><p>You helped bring order and clarity to our customers and made this so much more consumable.</p></blockquote><figcaption><span class="who">Product manager<span>Former Microsoft stakeholder</span></span></figcaption></figure>
         <figure class="qcard"><blockquote><p>I love the customer obsession and growth mindset — turning this into an amazing experience for customers.</p></blockquote><figcaption><span class="who">Program manager<span>Former Microsoft stakeholder</span></span></figcaption></figure>
       </div>
@@ -369,43 +418,50 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
 
     <section class="sec" id="community" aria-labelledby="h-comm">
       <div class="sec-head">
-        <p class="label">Presentations and community</p>
-        <h2 id="h-comm">Mentoring, public speaking, and leadership work</h2>
+        <p class="label">Speaking and community</p>
+        <h2 id="h-comm">Speaking, communications, and leadership forums</h2>
       </div>
       <div class="comm">
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6.2 4.5 2.4 4.5 5.8"/></svg></span>
-          <p class="label">Write the Docs</p>
-          <p>I’ve been a leading member of our local <a href="https://www.meetup.com/Write-The-Docs-TAplus/" target="_blank" rel="noopener">Write the Docs</a> chapter for many years, organizing and hosting meetups, giving talks, and serving on discussion panels.</p>
-          <p>My focus has been on how to work with docs-as-code and how docs teams can lead in the wider organization.</p>
+        <div class="ccol">
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 5h11l-2 4 2 4H5"/></svg></span>
+            <p class="label">Org-wide messaging</p>
+            <p>I led an internal team on asynchronous communication across a ~300-person org, defining new practices and team culture, presenting them at group meetings, and incorporating feedback.</p>
+            <p>I sat on a leadership team for a 50-person org during its shift from traditional technical writing to AI knowledge engineering, supporting team members and helping to define strategic plans.</p>
+          </div>
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H10l-4 4v-4H4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <p class="label">Soft skills</p>
+            <p>I’ve presented to teams and local sites on soft skills, including how to handle imposter syndrome and how to navigate crucial conversations.</p>
+          </div>
         </div>
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-3.5-2.5-6-6.5-6 0 3.8 2.5 6 6.5 6z"/><path d="M12 14c0-3 2.2-5 5.5-5 0 3.2-2.2 5-5.5 5z"/></svg></span>
-          <p class="label">Mentoring</p>
-          <p>I’ve mentored for local and global programs, including <a href="https://gvahim.org.il/" target="_blank" rel="noopener">Gvahim</a>, <a href="https://www.watoobi.com" target="_blank" rel="noopener">Watoobi</a>, and <a href="https://www.kiah.org.il/en/%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA/%D7%A1%D7%95%D7%93%D7%A7%D7%95%D7%AA-%D7%90%D7%AA-%D7%AA%D7%A7%D7%A8%D7%AA-%D7%94%D7%96%D7%9B%D7%95%D7%9B%D7%99%D7%AA/" target="_blank" rel="noopener"><span lang="he" dir="rtl">סודקות את התקרה הזכוכית</span></a>.</p>
-          <p>I’ve coached and managed junior writers and have supported career changes through both technical and soft-skill challenges.</p>
+        <div class="ccol">
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/><path d="M7 12l3-3 3 2 4-4"/></svg></span>
+            <p class="label">Microsoft Ignite</p>
+            <p>I co-presented a Learn Live session at Microsoft Ignite on short notice, after it was flagged for cancellation. I co-wrote the scripts and rehearsed heavily.</p>
+            <p>The session had 2,500 registrants and drew 400 live comments.</p>
+          </div>
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/></svg></span>
+            <p class="label">Webinar with David Deutsch</p>
+            <p>In 2025, I co-hosted an internal Microsoft webinar with Dr. David Deutsch on AI and the future of work, with more than 1,000 registrants.</p>
+            <p>Not having any background in quantum computing, I prepared by reading his two main books and working with a public-speaking coach.</p>
+          </div>
         </div>
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/></svg></span>
-          <p class="label">Public speaking</p>
-          <p>In 2025, I co-hosted an internal Microsoft webinar with Dr. David Deutsch on AI and the future of work.</p>
-          <p>Not having any background in quantum computing, I prepared by reading his two main books and working with a public-speaking coach.</p>
-        </div>
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/><path d="M7 12l3-3 3 2 4-4"/></svg></span>
-          <p class="label">Soft skills</p>
-          <p>Presented to teams and local sites on soft skills like handling imposter syndrome and crucial conversations.</p>
-        </div>
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H10l-4 4v-4H4z"/><path d="M8 9h8M8 12h5"/></svg></span>
-          <p class="label">Communication</p>
-          <p>Led an internal team on asynchronous communication across a ~300-person org, presenting at Town Halls and communicating new practices and team culture to team members.</p>
-        </div>
-        <div class="ccard">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 5h11l-2 4 2 4H5"/></svg></span>
-          <p class="label">Leadership</p>
-          <p>Sat on a leadership team for a 50-person org during a time of systemic change from traditional technical writing to AI knowledge engineering, supporting team members and helping to define strategic plans.</p>
-          <p>Led an internal transition team before a more formal transformation group was created, providing momentum and clear communication across the org.</p>
+        <div class="ccol">
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6.2 4.5 2.4 4.5 5.8"/></svg></span>
+            <p class="label">Write the Docs</p>
+            <p>I’ve been a leading member of our local <a href="https://www.meetup.com/Write-The-Docs-TAplus/" target="_blank" rel="noopener">Write the Docs</a> chapter for many years, organizing and hosting meetups, giving talks, and serving on discussion panels.</p>
+            <p>My focus has been on how to work with docs-as-code and how docs teams can lead in the wider organization.</p>
+          </div>
+          <div class="ccard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-3.5-2.5-6-6.5-6 0 3.8 2.5 6 6.5 6z"/><path d="M12 14c0-3 2.2-5 5.5-5 0 3.2-2.2 5-5.5 5z"/></svg></span>
+            <p class="label">Mentoring</p>
+            <p>I’ve mentored for local and global programs, including <a href="https://gvahim.org.il/" target="_blank" rel="noopener">Gvahim</a>, <a href="https://www.watoobi.com" target="_blank" rel="noopener">Watoobi</a>, and <a href="https://www.kiah.org.il/en/%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA/%D7%A1%D7%95%D7%93%D7%A7%D7%95%D7%AA-%D7%90%D7%AA-%D7%AA%D7%A7%D7%A8%D7%AA-%D7%94%D7%96%D7%9B%D7%95%D7%9B%D7%99%D7%AA/" target="_blank" rel="noopener"><span lang="he" dir="rtl">סודקות את תקרת הזכוכית</span></a>.</p>
+            <p>I’ve coached and managed junior writers and have supported career changes through both technical and soft-skill challenges.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -416,7 +472,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
         <h2 id="h-about">The thread through my work</h2>
       </div>
       <div class="about">
-        <p>I believe information should be accessible, findable, and usable. I’ve spent my career making that true for products that have it hard.</p>
+        <p>I believe information should be accessible, findable, and usable, and that people should hear it clearly when it matters to them. I’ve spent my career making that true for products and teams going through change.</p>
       </div>
     </section>
   </main>
@@ -431,5 +487,30 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
     </ul>
   </footer>
 </div>
+<script>
+(() => {
+  const track = document.getElementById('work-track');
+  const prev = document.getElementById('work-prev');
+  const next = document.getElementById('work-next');
+  const count = document.getElementById('work-count');
+  const cards = [...track.children];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const stepWidth = () => cards[1].offsetLeft - cards[0].offsetLeft;
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    const atEnd = track.scrollLeft >= max - 1;
+    const i = atEnd ? cards.length - 1 : Math.min(cards.length - 1, Math.round(track.scrollLeft / stepWidth()));
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = atEnd;
+    count.textContent = `${i + 1} / ${cards.length}`;
+  };
+  const go = dir => track.scrollBy({ left: dir * stepWidth(), behavior: reduce.matches ? 'auto' : 'smooth' });
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+  track.addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>
