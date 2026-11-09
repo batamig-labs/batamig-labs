@@ -12,6 +12,8 @@ Image prompts for [The Weekly Scribe](https://bengold543022.substack.com/), Ben 
 
 ## Posts
 
+This table is also the rotation log. The Claude Project reads the last row to pick a different mode for the next post, and adds a row for each new post.
+
 | # | Post | Parasha | Mode | Images | Prompts | Images folder |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Adam and Eve | Bereishit | Pastel portrait | 1 | [prompts](prompts/01-bereishit-adam-and-eve.md) | [images](images/01-bereishit-adam-and-eve/) |
@@ -23,10 +25,9 @@ Image prompts for [The Weekly Scribe](https://bengold543022.substack.com/), Ben 
 
 ## How I use it
 
-1. Paste a new post into the Claude Project and approve the shot plan.
+1. Paste a new post into the Claude Project and approve the shot plan. Claude writes the prompts and commits the prompt file, an images folder, and a new row in the table above.
 2. Start a new ChatGPT chat for the post, and paste the prompts in order in that one chat.
 3. Save each image to the post's folder in `images/`, named after its prompt: `01-header.png`, `02-inline.png`, `03-inline.png`.
-4. Add the prompts file and a row to the table above.
 
 ## The series look
 

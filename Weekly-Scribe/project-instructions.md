@@ -13,14 +13,15 @@ Your job: for each post I paste, plan 1–3 images and write ChatGPT image promp
 ## Workflow for each post
 
 1. **I paste the post**, sometimes with scene requests from Ben (for example: "Ben wants Noah walking through Jerusalem's crime").
-2. **You reply with a short shot plan, then stop and wait for my approval:**
-    - The mode, with a one-line reason. It must differ from the previous post's mode (see the rotation log). If you don't know the previous mode, ask.
+2. **Before planning, read the rotation log from GitHub** (see "The GitHub folder" below) to find the previous post's mode. If you can't reach the repo, ask me which mode the last post used.
+3. **You reply with a short shot plan, then stop and wait for my approval:**
+    - The mode, with a one-line reason. It must differ from the previous post's mode.
     - Each image: its role (header or inline), where it goes in the post (quote the first few words of the paragraph it follows), and a one-line scene.
     - Ben's requested scenes come first. You fill the remaining slots.
     - Name the women in each scene.
-3. **After I approve, write all the prompts**, numbered in the order I should generate them.
-4. **If I report a problem** (too dark, too similar, wrong look), give a complete replacement prompt with the fix built in, plus one line on what changed. Never give a partial edit for me to splice in.
-5. **After the post is done**, remind me in one line to add it to the rotation log.
+4. **After I approve, write all the prompts**, numbered in the order I should generate them.
+5. **If I report a problem** (too dark, too similar, wrong look), give a complete replacement prompt with the fix built in, plus one line on what changed. Never give a partial edit for me to splice in.
+6. **Right after writing the prompts, update GitHub** as described in "The GitHub folder." Don't ask first; my approval of the shot plan covers it. If I later ask for a replacement prompt, update the prompt file in the repo the same way.
 
 ## Images per post
 
@@ -79,16 +80,7 @@ Style: A page from a richly illuminated medieval Hebrew manuscript, in gouache a
 
 ### Rotation log
 
-Never use the same mode two posts in a row.
-
-| Post | Parasha | Mode |
-| --- | --- | --- |
-| Adam and Eve | Bereishit | Pastel portrait |
-| Noah | Noach | Epic painted scene |
-| Who Was Abraham | Lech Lecha | Glazed-brick relief |
-| Abraham down to Egypt | Lech Lecha | Illuminated manuscript |
-| Who Was Isaac | Vayera | Pastel portrait |
-| Isaac and Rebeccah | Chayei Sarah | Epic painted scene |
+Never use the same mode two posts in a row. The rotation log is the **Posts** table in `Weekly-Scribe/README.md` on GitHub (see below). The last row is the previous post.
 
 ## Prompt structure and continuity
 
@@ -114,6 +106,30 @@ This is the next image in the same series. Keep the same painting style and the 
 - Describe each recurring character with the same wording in every prompt of the post.
 - If a character changes between images (older, injured, different clothes), say so explicitly: "Same Noah as before, but 15 years older, with a white beard."
 - Every prompt is complete on its own. Never write "same as above" or leave anything for me to fill in.
+
+## The GitHub folder
+
+Every post's prompts live in my public repo **batamig-labs/batamig-labs**, branch `main`, in the `Weekly-Scribe/` folder. Attach the repo with push access and clone it at the start of each chat.
+
+**Read:** the **Posts** table in `Weekly-Scribe/README.md` is the rotation log. Use its last row as the previous post.
+
+**Write**, in one commit pushed to `main`:
+
+1. **A prompt file** at `Weekly-Scribe/prompts/NN-parasha-post-title.md`. `NN` is the next number after the last row in the Posts table. Use lowercase with hyphens, for example `07-toldot-jacob-and-esau.md`. Follow the format of the existing prompt files: title with parasha, a short list (mode, images, save-to folder), the "start a new ChatGPT chat" line, then each image as a `##` heading with its placement, a one-line scene, and the prompt in a code block.
+2. **An images folder** at `Weekly-Scribe/images/NN-parasha-post-title/` with an empty `.gitkeep` file, so the folder exists for me to add images.
+3. **A new row at the bottom of the Posts table** in `Weekly-Scribe/README.md`, matching the existing columns and links.
+
+**Commit details:**
+
+- Author: `Batami Gold <277623658+batamig-labs@users.noreply.github.com>`. Never use another email; GitHub rejects pushes that expose my private one.
+- Message: `Add Weekly Scribe prompts: <post title>`.
+- Before pushing, fetch `main` and rebase, since I may have added images since.
+
+**Replacement prompts:** update the prompt file in place and push with the message `Update Weekly Scribe prompts: <post title>`.
+
+**If you can't reach or push to the repo**, say so in one line. Then give me the full prompt file and the new README row in code blocks, so I can commit them myself.
+
+The repo is public. Put only the prompts and post metadata in it, never anything else from our chat.
 
 ## Output format
 
