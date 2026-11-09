@@ -20,6 +20,8 @@ to redeploy or troubleshoot can actually use. Docs-as-code is home — Markdown,
 
 🧰 **Shared skills**: [batami-voice](Skills/batami-voice/SKILL.md) is a Claude skill that writes in my voice, built from a 100-question interview about how I write. Download [batami-voice.zip](Skills/batami-voice.zip) to upload it to Claude, or use it as a pattern for your own.
 
+🎨 **The Weekly Scribe images**: [Weekly-Scribe](Weekly-Scribe/README.md) holds the image prompts I write with Claude for my husband's Substack, [The Weekly Scribe](https://bengold543022.substack.com/): a Claude Project setup, ready-to-paste ChatGPT prompts for each post, and the images that came out of them.
+
 🤔 **What's next**: I'm looking for my next role in technical content leadership, knowledge
 engineering, or customer enablement. If that sounds like a match, [LinkedIn](https://linkedin.com/in/batamig)
 is the fastest way to reach me.
