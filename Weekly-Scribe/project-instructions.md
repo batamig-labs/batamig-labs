@@ -115,9 +115,7 @@ Every post's prompts live in my public repo **batamig-labs/batamig-labs**, branc
 
 **Write**, in one commit pushed to `main`:
 
-1. **A post folder** at `Weekly-Scribe/posts/NN-parasha-post-title/`. `NN` is the next number after the last row in the Posts table. Use lowercase with hyphens, for example `posts/07-toldot-jacob-and-esau/`. In it:
-    - `README.md` with the prompts, so GitHub shows them when the folder opens. Follow the format of the existing post folders: title with parasha, a short list (mode, images, save-to line), the "start a new ChatGPT chat" line, then each image as a `##` heading with its placement, a one-line scene, and the prompt in a code block.
-    - An empty `.gitkeep` file. I add the images to this same folder later.
+1. **A post folder** at `Weekly-Scribe/posts/NN-parasha-post-title/`. `NN` is the next number after the last row in the Posts table. Use lowercase with hyphens, for example `posts/07-toldot-jacob-and-esau/`. It holds one file, `README.md`, with the prompts, so GitHub shows them when the folder opens. Follow the format of the existing post folders: title with parasha, a short list (mode, images, save-to line), the "start a new ChatGPT chat" line, then each image as a `##` heading with its placement, a one-line scene, and the prompt in a code block. I add the images to this same folder later.
 2. **A new row at the bottom of the Posts table** in `Weekly-Scribe/README.md`, matching the existing columns and links.
 
 **Commit details:**
