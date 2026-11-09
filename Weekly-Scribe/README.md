@@ -24,9 +24,10 @@ This table is also the rotation log. The Claude Project reads the last row to pi
 
 ## How I use it
 
-1. Paste a new post into the Claude Project and approve the shot plan. Claude writes the prompts and commits a new post folder and a new row in the table above.
-2. Start a new ChatGPT chat for the post, and paste the prompts in order in that one chat.
-3. Save each image in the post's folder, next to its prompts, named after its prompt: `01-header.png`, `02-inline.png`, `03-inline.png`.
+1. Paste a new post into the Claude Project and approve the shot plan. Claude writes the prompts and opens a pull request with a new post folder and a new row in the table above.
+2. Claude asks how to merge: merge it now, or leave it for me to review or to add the images first.
+3. Start a new ChatGPT chat for the post, and paste the prompts in order in that one chat.
+4. Save each image in the post's folder, next to its prompts, named after its prompt: `01-header.png`, `02-inline.png`, `03-inline.png`. Add them to the pull request branch before merging, or to `main` afterward.
 
 ## The series look
 
