@@ -2,7 +2,7 @@
 
 - **Mode:** Pastel portrait
 - **Images:** 3 (header + 2 inline)
-- **Save images to:** [images/05-vayera-who-was-isaac/](../images/05-vayera-who-was-isaac/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post, and generate all three images in that one chat. The images show Isaac watching his father and the aftermath, never the violence itself.
 

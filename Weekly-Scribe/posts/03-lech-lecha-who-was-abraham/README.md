@@ -2,7 +2,7 @@
 
 - **Mode:** Glazed-brick relief
 - **Images:** 3 (header + 2 inline)
-- **Save images to:** [images/03-lech-lecha-who-was-abraham/](../images/03-lech-lecha-who-was-abraham/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post, and generate all three images in that one chat.
 

@@ -2,7 +2,7 @@
 
 - **Mode:** Epic painted scene
 - **Images:** 3 (header + 2 inline)
-- **Save images to:** [images/06-chayei-sarah-isaac-and-rebeccah/](../images/06-chayei-sarah-isaac-and-rebeccah/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post, and generate all three images in that one chat.
 

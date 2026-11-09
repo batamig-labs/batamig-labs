@@ -2,7 +2,7 @@
 
 - **Mode:** Illuminated manuscript
 - **Images:** 1 (header only; short reflective post)
-- **Save images to:** [images/04-lech-lecha-abraham-down-to-egypt/](../images/04-lech-lecha-abraham-down-to-egypt/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post.
 

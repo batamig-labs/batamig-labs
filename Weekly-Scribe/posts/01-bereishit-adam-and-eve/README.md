@@ -2,7 +2,7 @@
 
 - **Mode:** Pastel portrait
 - **Images:** 1 (header)
-- **Save images to:** [images/01-bereishit-adam-and-eve/](../images/01-bereishit-adam-and-eve/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post.
 

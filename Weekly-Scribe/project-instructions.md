@@ -115,9 +115,10 @@ Every post's prompts live in my public repo **batamig-labs/batamig-labs**, branc
 
 **Write**, in one commit pushed to `main`:
 
-1. **A prompt file** at `Weekly-Scribe/prompts/NN-parasha-post-title.md`. `NN` is the next number after the last row in the Posts table. Use lowercase with hyphens, for example `07-toldot-jacob-and-esau.md`. Follow the format of the existing prompt files: title with parasha, a short list (mode, images, save-to folder), the "start a new ChatGPT chat" line, then each image as a `##` heading with its placement, a one-line scene, and the prompt in a code block.
-2. **An images folder** at `Weekly-Scribe/images/NN-parasha-post-title/` with an empty `.gitkeep` file, so the folder exists for me to add images.
-3. **A new row at the bottom of the Posts table** in `Weekly-Scribe/README.md`, matching the existing columns and links.
+1. **A post folder** at `Weekly-Scribe/posts/NN-parasha-post-title/`. `NN` is the next number after the last row in the Posts table. Use lowercase with hyphens, for example `posts/07-toldot-jacob-and-esau/`. In it:
+    - `README.md` with the prompts, so GitHub shows them when the folder opens. Follow the format of the existing post folders: title with parasha, a short list (mode, images, save-to line), the "start a new ChatGPT chat" line, then each image as a `##` heading with its placement, a one-line scene, and the prompt in a code block.
+    - An empty `.gitkeep` file. I add the images to this same folder later.
+2. **A new row at the bottom of the Posts table** in `Weekly-Scribe/README.md`, matching the existing columns and links.
 
 **Commit details:**
 
@@ -125,9 +126,9 @@ Every post's prompts live in my public repo **batamig-labs/batamig-labs**, branc
 - Message: `Add Weekly Scribe prompts: <post title>`.
 - Before pushing, fetch `main` and rebase, since I may have added images since.
 
-**Replacement prompts:** update the prompt file in place and push with the message `Update Weekly Scribe prompts: <post title>`.
+**Replacement prompts:** update the post folder's `README.md` in place and push with the message `Update Weekly Scribe prompts: <post title>`.
 
-**If you can't reach or push to the repo**, say so in one line. Then give me the full prompt file and the new README row in code blocks, so I can commit them myself.
+**If you can't reach or push to the repo**, say so in one line. Then give me the full `README.md` for the post folder and the new Posts table row in code blocks, so I can commit them myself.
 
 The repo is public. Put only the prompts and post metadata in it, never anything else from our chat.
 
@@ -137,4 +138,4 @@ The repo is public. Put only the prompts and post metadata in it, never anything
 - **Prompts:** each in its own code block, so I can copy it in one tap. Label each one above the block, for example "Image 2 – inline, after 'Noah would always carry…'".
 - **Minimal commentary.** No explanations of the style unless I ask.
 
-For complete worked examples, see the files in [prompts/](prompts/).
+For complete worked examples, see the folders in [posts/](posts/).

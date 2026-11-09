@@ -7,27 +7,26 @@ Image prompts for [The Weekly Scribe](https://bengold543022.substack.com/), Ben 
 | Folder or file | What it holds |
 | --- | --- |
 | [project-instructions.md](project-instructions.md) | The Claude Project instructions: workflow, series rules, the four style modes, and prompt structure |
-| [prompts/](prompts/) | One file per post, with every image prompt ready to paste |
-| [images/](images/) | One folder per post for the images saved from ChatGPT |
+| [posts/](posts/) | One folder per post: its prompts (the folder's README) and the images saved from ChatGPT |
 
 ## Posts
 
 This table is also the rotation log. The Claude Project reads the last row to pick a different mode for the next post, and adds a row for each new post.
 
-| # | Post | Parasha | Mode | Images | Prompts | Images folder |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | Adam and Eve | Bereishit | Pastel portrait | 1 | [prompts](prompts/01-bereishit-adam-and-eve.md) | [images](images/01-bereishit-adam-and-eve/) |
-| 2 | Noah | Noach | Epic painted scene | 2 | [prompts](prompts/02-noach-noah.md) | [images](images/02-noach-noah/) |
-| 3 | Who Was Abraham | Lech Lecha | Glazed-brick relief | 3 | [prompts](prompts/03-lech-lecha-who-was-abraham.md) | [images](images/03-lech-lecha-who-was-abraham/) |
-| 4 | Abraham down to Egypt | Lech Lecha | Illuminated manuscript | 1 | [prompts](prompts/04-lech-lecha-abraham-down-to-egypt.md) | [images](images/04-lech-lecha-abraham-down-to-egypt/) |
-| 5 | Who Was Isaac | Vayera | Pastel portrait | 3 | [prompts](prompts/05-vayera-who-was-isaac.md) | [images](images/05-vayera-who-was-isaac/) |
-| 6 | Isaac and Rebeccah | Chayei Sarah | Epic painted scene | 3 | [prompts](prompts/06-chayei-sarah-isaac-and-rebeccah.md) | [images](images/06-chayei-sarah-isaac-and-rebeccah/) |
+| # | Post | Parasha | Mode | Images | Folder |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Adam and Eve | Bereishit | Pastel portrait | 1 | [prompts and images](posts/01-bereishit-adam-and-eve/) |
+| 2 | Noah | Noach | Epic painted scene | 2 | [prompts and images](posts/02-noach-noah/) |
+| 3 | Who Was Abraham | Lech Lecha | Glazed-brick relief | 3 | [prompts and images](posts/03-lech-lecha-who-was-abraham/) |
+| 4 | Abraham down to Egypt | Lech Lecha | Illuminated manuscript | 1 | [prompts and images](posts/04-lech-lecha-abraham-down-to-egypt/) |
+| 5 | Who Was Isaac | Vayera | Pastel portrait | 3 | [prompts and images](posts/05-vayera-who-was-isaac/) |
+| 6 | Isaac and Rebeccah | Chayei Sarah | Epic painted scene | 3 | [prompts and images](posts/06-chayei-sarah-isaac-and-rebeccah/) |
 
 ## How I use it
 
-1. Paste a new post into the Claude Project and approve the shot plan. Claude writes the prompts and commits the prompt file, an images folder, and a new row in the table above.
+1. Paste a new post into the Claude Project and approve the shot plan. Claude writes the prompts and commits a new post folder and a new row in the table above.
 2. Start a new ChatGPT chat for the post, and paste the prompts in order in that one chat.
-3. Save each image to the post's folder in `images/`, named after its prompt: `01-header.png`, `02-inline.png`, `03-inline.png`.
+3. Save each image in the post's folder, next to its prompts, named after its prompt: `01-header.png`, `02-inline.png`, `03-inline.png`.
 
 ## The series look
 

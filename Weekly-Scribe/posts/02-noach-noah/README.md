@@ -2,7 +2,7 @@
 
 - **Mode:** Epic painted scene
 - **Images:** 2 (header + 1 inline)
-- **Save images to:** [images/02-noach-noah/](../images/02-noach-noah/)
+- **Save images to:** this folder, as `01-header.png`, `02-inline.png`, and so on
 
 Start a new ChatGPT chat for this post, and generate both images in that one chat.
 
