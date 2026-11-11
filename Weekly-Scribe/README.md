@@ -22,6 +22,7 @@ This table is also the rotation log. The Claude Project reads the last row to pi
 | 5 | Who Was Isaac | Vayera | Pastel portrait | 3 | [prompts and images](posts/05-vayera-who-was-isaac/) |
 | 6 | Isaac and Rebeccah | Chayei Sarah | Epic painted scene | 3 | [prompts and images](posts/06-chayei-sarah-isaac-and-rebeccah/) |
 | 7 | Two Sayings I Love | Chayei Sarah | Illuminated manuscript | 1 | [prompts and images](posts/07-chayei-sarah-two-sayings-i-love/) |
+| 8 | Who Was Esav | Toldot | Pastel portrait | 3 | [prompts and images](posts/08-toldot-who-was-esav/) |
 
 ## How I use it
 
