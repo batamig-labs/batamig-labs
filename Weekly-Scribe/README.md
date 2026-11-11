@@ -21,6 +21,7 @@ This table is also the rotation log. The Claude Project reads the last row to pi
 | 4 | Abraham down to Egypt | Lech Lecha | Illuminated manuscript | 1 | [prompts and images](posts/04-lech-lecha-abraham-down-to-egypt/) |
 | 5 | Who Was Isaac | Vayera | Pastel portrait | 3 | [prompts and images](posts/05-vayera-who-was-isaac/) |
 | 6 | Isaac and Rebeccah | Chayei Sarah | Epic painted scene | 3 | [prompts and images](posts/06-chayei-sarah-isaac-and-rebeccah/) |
+| 7 | Two Sayings I Love | Chayei Sarah | Illuminated manuscript | 1 | [prompts and images](posts/07-chayei-sarah-two-sayings-i-love/) |
 
 ## How I use it
 
