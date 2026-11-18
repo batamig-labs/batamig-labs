@@ -42,7 +42,7 @@ These rules are thin on purpose. Everything else changes with the mode, so posts
 - **Wide 16:9 format.**
 - **No text in the image.** Every prompt ends with the no-text line.
 
-## The four modes
+## The seven modes
 
 Each mode has its own medium, viewpoint, light, and palette. Paste the mode's style block into the prompt word for word, then add one sentence on this scene's specific light and colors. Never reuse one mode's style words in another mode.
 
@@ -76,6 +76,30 @@ For reflective, personal, or prophetic posts. Viewpoint: a central framed scene 
 
 ```
 Style: A page from a richly illuminated medieval Hebrew manuscript, in gouache and burnished gold leaf on vellum. A central framed scene with flat, decorative perspective, surrounded by an ornate border of vines, animals, and motifs drawn from the scene. Jewel tones: ruby, emerald, lapis, saffron, and gold leaf, with Phoenician purple. Fine, delicate line work. The border contains no letters or writing.
+```
+
+### 5. Woven tapestry
+
+For the story of a People, many voices, community, craft, and anything about weaving or stitching together. Viewpoint: medium to wide, layered figures across a slightly flat, decorative picture plane.
+
+```
+Style: A monumental hand-woven tapestry in dyed wool and linen, like an ancient Near Eastern wall hanging. Every shape is built from visible woven threads, with a fine warp-and-weft grain, stepped edges where colors meet, and a little hand-spun irregularity. Figures are simplified but expressive, with strong outlines in dark thread. Deep, saturated dyes: madder red, indigo, saffron, olive green, and ivory, with Phoenician purple as the strongest accent. Warm, tactile, and handmade.
+```
+
+### 6. Synagogue-floor mosaic
+
+For covenants, festivals, gatherings, journeys, and celebration. Viewpoint: frontal and flat, centered in a patterned border.
+
+```
+Style: A monumental ancient floor mosaic of small glass and stone tesserae, like the synagogue mosaics of the Galilee. Visible grout lines between tesserae, figures outlined in dark stones, flat decorative perspective, and a border of geometric knots and vines. Vivid, jewel-like color: terracotta red, sea blue, olive green, sunflower yellow, and ivory, with Phoenician purple tesserae as the strongest accent. Glittering, solid, and festive.
+```
+
+### 7. Color woodcut
+
+For moral outrage, confrontation, warnings, and injustice. Viewpoint: dramatic low or high angles with strong diagonals.
+
+```
+Style: A bold hand-carved color woodcut print, in the spirit of early-20th-century German Expressionist prints. Heavy black carved outlines, visible gouge marks, and flat blocks of overprinted ink, slightly misregistered, on rough cream paper. Angular, dramatic forms with weighted, expressive faces. Saturated ink colors: vermilion, ultramarine, mustard yellow, and forest green, with Phoenician purple as the strongest accent. Raw, urgent, and powerful.
 ```
 
 ### Rotation log

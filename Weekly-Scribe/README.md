@@ -22,7 +22,7 @@ This table is also the rotation log. The Claude Project reads the last row to pi
 | 5 | Who Was Isaac | Vayera | Pastel portrait | 3 | [prompts and images](posts/05-vayera-who-was-isaac/) |
 | 6 | Isaac and Rebeccah | Chayei Sarah | Epic painted scene | 3 | [prompts and images](posts/06-chayei-sarah-isaac-and-rebeccah/) |
 | 7 | Two Sayings I Love | Chayei Sarah | Illuminated manuscript | 1 | [prompts and images](posts/07-chayei-sarah-two-sayings-i-love/) |
-| 8 | Prophets and Torah | Toldot | Pastel portrait | 2 | [prompts and images](posts/08-toldot-prophets-and-torah/) |
+| 8 | Prophets and Torah | Toldot | Woven tapestry | 3 | [prompts and images](posts/08-toldot-prophets-and-torah/) |
 
 ## How I use it
 
@@ -33,11 +33,14 @@ This table is also the rotation log. The Claude Project reads the last row to pi
 
 ## The series look
 
-Each post rotates through one of four modes, so no two weeks look alike:
+Each post rotates through one of seven modes, so no two weeks look alike:
 
 - **Pastel portrait**: soft pastel in the spirit of Abel Pann's Jerusalem biblical art, for intimate moments.
 - **Glazed-brick relief**: like the Ishtar Gate and Persian friezes, for empire and ceremony.
 - **Epic painted scene**: Romantic-era oil, for journeys, war, and exile.
 - **Illuminated manuscript**: jewel tones and gold leaf, for reflective posts.
+- **Woven tapestry**: dyed wool and linen threads, for the story of a People and its many voices.
+- **Synagogue-floor mosaic**: glass and stone tesserae, like the ancient mosaics of the Galilee, for covenants, festivals, and gatherings.
+- **Color woodcut**: bold carved Expressionist prints, for moral outrage and confrontation.
 
 Every image includes women, a touch of Phoenician purple, period-accurate detail, rich color, a 16:9 frame, and no text.
